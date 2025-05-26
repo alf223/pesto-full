@@ -6,8 +6,6 @@ description = "Fork of PESTO-full for pitch estimation and training, designed as
 readme = "README.md"
 requires-python = ">=3.9" 
 license = { file = "LICENSE.md" }
-authors = [{ name = "Alain Riou, Stefan Lattner, Gaëtan Hadjeres, Geoffroy Peeters" }]
-keywords = ["pitch estimation", "self-supervised learning", "audio"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)", # Ensure license is correct
