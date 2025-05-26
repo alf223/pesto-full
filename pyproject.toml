@@ -1,0 +1,52 @@
+# pyproject.toml for alf223/pesto-full
+[project]
+name = "pesto-full-lib" # This is the package name you'll use to import it (e.g., import pesto_full_lib.models.pesto)
+version = "0.0.1" 
+description = "Fork of PESTO-full for pitch estimation and training, designed as a library."
+readme = "README.md"
+requires-python = ">=3.9" 
+license = { file = "LICENSE.md" }
+authors = { name = "Alain Riou, Stefan Lattner, Gaëtan Hadjeres, Geoffroy Peeters" }
+keywords = ["pitch estimation", "self-supervised learning", "audio"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)", # Ensure license is correct
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Multimedia :: Sound/Audio :: Analysis",
+]
+
+dependencies = [
+    "torch>=2.1.2",
+    "torchaudio>=2.1.2",
+    "lightning>=2.1.3",
+    "hydra-core>=1.3.2",
+    "hydra-colorlog",
+    "nnAudio>=0.3.2", # IMPORTANT: See troubleshooting note below for nnAudio
+    "rich>=13.7.0",
+    "rootutils>=1.0.7",
+    "numpy", # Implicitly used
+    "scikit-learn", # Used for KFold in data.audio_datamodule
+    "mir_eval", # Used in callbacks.mir_eval
+    "tqdm", # Used in AudioDataModule
+    "omegaconf", # Used in utils
+    "psutil", # From environment.yml
+    "setproctitle", # From environment.yml
+]
+
+[project.optional-dependencies]
+dev = [
+    "wandb",
+    "python-dotenv",
+    "pytest",
+    "pre-commit", # If you plan to run pre-commit hooks in pesto-full
+    "black",      # Common dev tools
+    "ruff",       # Common dev tools
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"] # This tells hatchling that the actual package content is inside the 'src' directory.
