@@ -6,7 +6,7 @@ description = "Fork of PESTO-full for pitch estimation and training, designed as
 readme = "README.md"
 requires-python = ">=3.9" 
 license = { file = "LICENSE.md" }
-authors = { name = "Alain Riou, Stefan Lattner, Gaëtan Hadjeres, Geoffroy Peeters" }
+authors = [{ name = "Alain Riou, Stefan Lattner, Gaëtan Hadjeres, Geoffroy Peeters" }]
 keywords = ["pitch estimation", "self-supervised learning", "audio"]
 classifiers = [
     "Programming Language :: Python :: 3",
